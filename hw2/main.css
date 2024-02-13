@@ -3,6 +3,12 @@ body{
   margin: 0;
   padding: 0;
 }
+a:hover {
+  color: rgb(255, 130, 72);
+  font-size: 2em;
+  font-style: italic;
+}
+
 .nav {
     background-color: #2d2d2d;
     overflow: hidden;
@@ -81,6 +87,10 @@ body{
   color: rgb(0, 39, 93);
   padding: 5px;
   font-size: 70px;
+}
+.bw_image a.hover{
+  color: rgb(185, 66, 245);
+  font-size: 2em;
 }
 /* right side review */
 .review1 {
