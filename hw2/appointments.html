@@ -1,0 +1,135 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <title>Silvia's|Appointments</title>
+    <style>
+        body {
+            background-color: rgb(232, 249, 255);
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav {
+            background-color: #2d2d2d;
+            overflow: hidden;
+        }
+
+        /* Style the links inside the navigation bar */
+        .nav a {
+            float: right;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            font-family: 'consolas', sans-serif;
+        }
+
+        /* Change the color of links on hover */
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Add a color to the active/current link */
+        .nav a.active {
+            background-color: #0d79b3;
+            color: white;
+        }
+
+        .banner {
+            height: 250px;
+            background-image: url("images/potential_banner.jpg");
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 6em;
+            font-family: 'Kaushan Script', 'cursive';
+        }
+
+        .form {
+            line-height: 2.5;
+            font-family: 'consolas';
+            font-size: 20px;
+            display: flex;
+            background-color: #4aa8da;
+            justify-content: center;
+            margin-left: 20%;
+            margin-right: 20%;
+            margin-top: 50px;
+            border-color: #282525;
+            border-style: solid;
+            border-width: 10px;
+        }
+        .contact {
+            margin-top: 40px;
+            font-size: 20px;
+            font-family: 'consolas';
+            background-color: rgba(127, 172, 235, 0.5);
+            width: 500px;
+            text-align: center;
+            margin-left: 38%;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="banner"><em>SILVIA'S SALON</em></div>
+    <div class="nav">
+        <a href="main.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="appointments.html" class="active">Appointments</a>
+    </div>
+    <div class="form">
+        <form id="form" class="ap_form" method="get" action="#">
+            Enter Name: <input type="text" placeholder="John Smith" id="name" name="name">
+            <br>
+            Haircut, Styling, or Waxing?
+            <br>
+            <label for="haircut_box">Haircut</label>
+            <input type="checkbox" name="haircut_box" id="haircut_box">
+            <label for="styling_box">Styling</label>
+            <input type="checkbox" name="styling_box" id="styling_box">
+            <label for="wax_box">Waxing</label>
+            <input type="checkbox" name="wax_box" id="wax_box">
+
+            <br>
+            <label for="request">Please choose what we can do for you!</label>
+            <br>
+            <select name="request" id="request" multiple>
+                <option value="Blowout">Blowout</option>
+                <option value="Updo">Updo</option>
+                <option value="Braids">Braids</option>
+                <option value="Coloring">Coloring</option>
+                <option value="Hair Treatment">Hair Treatment</option>
+                <option value="Consulting">Consulting</option>
+                <option value="Face Wax">Face Wax</option>
+                <option value="Body Wax">Body Wax</option>
+            </select>
+            <br>
+            Please enter desired date for appointment:
+            <br>
+            <input type="date" name="app_date" id="date">
+            <br>
+            and time?
+            <input type="time">
+            <br>
+            <input type="submit" name="submit" id="submit">
+        </form>
+    </div>
+    <div class="contact">
+        <span class="title">Contact Us!</span>
+        <br>
+        Email: <a href="mailto:silvias@veryrealmail.com">silvias@veryrealmail.com</a>
+        <br>
+        Phone: <a href="tel:+9789872105">978-987-HAIR</a>
+    </div>
+</body>
+</html>
