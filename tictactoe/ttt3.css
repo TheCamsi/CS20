@@ -1,0 +1,64 @@
+
+.square {
+    height: 200px;
+    width: 200px;
+    border: 3px solid black;
+    font-family: sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 75px;
+}
+
+.square:hover {
+    background-color: rgb(240, 240, 240);
+}
+#boxes {
+    display: grid;
+    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: 200px 200px 200px;
+    gap: 10px;
+}
+
+#title {
+    font-style: italic;
+    font-size: 3rem;
+    color: rgb(157, 29, 29);
+}
+
+#turn_indicator {
+    font-size: 3rem;
+    display: flex;
+    background-color: rgb(123, 233, 233);
+    height: 150px;
+    width: 625px;
+    align-items: center;
+    justify-content: center;
+}
+
+#win_message {
+    font-size: 3rem;
+    position: absolute;
+    top: 350px; 
+    left: 220px; 
+    width: max-content;
+    height: max-content;
+    background-color: rgb(255, 132, 247); 
+    border: 4px black solid;
+}
+
+#restart {
+    background-color: rgb(81, 81, 249);
+    border-radius: 3rem;
+    border: none;
+    color: rgb(255, 255, 255);
+    width: 200px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-left: 215px;
+}
+
+#restart:hover {
+    background-color: rgb(110, 110, 255);
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>tic tac toe</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='ttt3.css'>
+    <script src="ttt4.js"></script>
+</head>
+<body>
+    <h1 id="title">Tic Tac Toe</h1>
+    <button id="restart" onclick="reset()">Start Game</button>
+    <div id="boxes">
+        <script>
+            const NUM_SQUARES = 9;
+            for (i=0; i<NUM_SQUARES; i++)
+            {
+                id = "sq"+i;
+                document.write( "<div class='square' id='" + id + "' onclick='playTurn(id)'></div>" );
+            }
+        </script>
+    </div>
+    <div id="turn_indicator">
+        <script>
+            if(xturn) {
+                document.write("It is X's turn");
+            }
+            else document.write("It is O's turn")
+        </script>
+    </div>
+    <div id="win_message" style="visibility: hidden;"></div>
+</body>
+</html>
