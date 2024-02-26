@@ -69,7 +69,7 @@ function checkWin() {
     ]
     console.log(winConditions);
     let win_message = document.getElementById("win_message");
-    for(let i = 0; i < 8; i++) {
+    for(let i = 0; i < 9; i++) {
         if(winConditions[i] == "XXX") {
             win_message.innerHTML = "X WINS!!!";
             win_message.style.visibility = 'visible';
