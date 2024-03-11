@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Products</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #json-data {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <button id="filter">Filter</button>
+    <select id="categorySelect">
+        <option value="">Select Category</option>
+    </select>
+    <script>
+            $.get("products.json", function(data) {
+                for(var category in data) {
+                    $('#json-data').append("Category: " + category + "<div id='" + category.toLowerCase() + "'> </div> </br>")
+                    for(var product in data[category]) {
+                        let productDetails = data[category][product]
+                        let productName = product;
+                        $('#' + category.toLowerCase()).append("Product: " + productName + "<div id='" + productName.toLowerCase() + "-" + category.toLowerCase() + "'></div></br>");
+                        document.getElementById(product.toLowerCase() + '-' + category.toLowerCase()).innerHTML = 
+                        "Price: $" + productDetails.price + '</br>' + "Desc: " + productDetails.desc
+                    }
+                }
+                populateCategories(data);
+            })
+            $('#filter').click(function(){
+                let selectedCat = $('#categorySelect').val();
+                $('#json-data').html('');
+                $.get('products.json', function(data) {
+                    for(var category in data) {
+                        if(category == selectedCat) {
+                            $('#json-data').append("<div id='" + category.toLowerCase() + "'></div>")
+                            for(var product in data[category]) {
+                                let productDetails = data[category][product]
+                                let productName = product;
+                                $('#' + category.toLowerCase()).append("Product: " + productName + "<div id='" + productName.toLowerCase() + "-" + category.toLowerCase() + "'></div></br>");
+                                document.getElementById(product.toLowerCase() + '-' + category.toLowerCase()).innerHTML = 
+                                "Price: $" + productDetails.price + '</br>' + "Desc: " + productDetails.desc;
+                            }
+                        }
+                    }
+                })
+            })
+
+            function populateCategories(data) {
+                var categories = [];
+                for(var category in data) {
+                    
+                    if(!categories.includes(category)) {
+                        $('#categorySelect').append("<option value='" + category + "''>" + category + "</option>")
+                    }
+                    categories.push(category);
+                }
+                
+            }
+
+            function filterProducts(category) {
+            $.get("products.json", function(data){
+                var filteredProducts = data.filter(function(product){
+                    return product.categories.includes(category);
+                });
+                displayProducts(filteredProducts);
+            });
+        }
+    </script>
+
+
+    <div id="json-data">
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{
+  "Food": {
+      "Dr.Pepper": {
+          "desc": "12-pack of canned Dr. Pepper",
+          "price": 8
+          },
+          "Ice Cream": {
+            "desc": "Fresh Creamy Coffee Ice Cream",
+            "price": 6
+          },
+          "MMM Food Vinyl": {
+            "desc": "MMM... Food by MF DOOM Vinyl",
+            "price": 30
+          } 
+        },
+        "Music": {
+            "MMM Food Vinyl": {
+            "desc": "MMM... Food by MF DOOM Vinyl",
+            "price": 30
+          },
+          "Pink Floyd T-Shirt": {
+            "desc": "Vintage style Pink Floyd t-shirt",
+            "price": 22
+          },
+          "Speaker": {
+            "desc": "6in Pill style speaker",
+            "price": 20
+          }  ,
+          "This Old Dog Vinyl": {
+            "desc": "This Old Dog by Mac Demarco Vinyl",
+            "price": 25
+          }
+        },
+        "Clothing": {
+            "Pink Floyd T-Shirt": {
+            "desc": "Vintage style Pink Floyd t-shirt",
+            "price": 22
+        },
+            "Nike Blazers": {
+                "desc": "Black and White hi top Blazers",
+                "price": 80
+            },
+            "Cargo Pants": {
+                "desc": "Green Canvas Cargo Pants",
+                "price": 60
+            },
+            "Black Puffer": {
+                "desc": "North Face Black Puffer Jacket",
+                "price": 150
+            }
+
+        }
+}
