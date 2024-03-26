@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ron Swanson</title>
     <style>
+        #header {
+            font-size: 30px;
+        }
         #quotes {
             font-size: 20px;
+            margin-bottom: 5px;
         }
 
         #submit {
@@ -14,16 +18,22 @@
             width: 100px;
             margin-top: 5px;
         }
+        input {
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
+    <div id="header">
     <h1>Ron Quote Search Engine</h1>
     <label for="word_search">Please enter a word below and recieve related Ron Swanson Quotes!</label> 
     <br>
     <span>You can also hit submit with an empty box for a random quote!</span><br>
     <input type="text" id="word_search" placeholder="Enter Word"> <br>
     <button id="submit">Submit</button>
-    
+    </div>
     <script>
         let submit = document.getElementById('submit');
         submit.addEventListener('click', function() {
@@ -32,10 +42,13 @@
             let response = fetch("https://ron-swanson-quotes.herokuapp.com/v2/quotes/search/" + word)
             .then(response => response.json())
             .then(data => { 
-                    for(i = 0; i < data.length; i++) {
-                        document.getElementById('quotes').innerHTML += data[i] + '</br>'
-                    }
+                if(data.length == 0) {
+                    document.getElementById('quotes').innerHTML = "Sorry, could not find any quotes :("
+                }  
+                for(i = 0; i < data.length; i++) {
+                    document.getElementById('quotes').innerHTML += data[i] + '</br>'
                 }
+            }
             )
             .catch(error => console.error(error));
             
