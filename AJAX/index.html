@@ -10,7 +10,7 @@
     <div id="wantedList"></div>
     
     <script>
-        let response = fetch('https://www.fbi.gov/wanted/api/wanted')
+        let response = fetch("https://ron-swanson-quotes.herokuapp.com/v2/quotes")
             .then(response => response.json())
             .then(data => console.log(data))
             .catch(error => console.error(error));
