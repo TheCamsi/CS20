@@ -23,6 +23,12 @@
             height: 50px;
             font-size: 20px;
         }
+
+        #API-info {
+            width: 500px;
+            font-size: 20px;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
@@ -39,6 +45,7 @@
         submit.addEventListener('click', function() {
             document.getElementById('quotes').innerHTML = ''
             let word = document.getElementById('word_search').value
+            //fetch appropiate object
             let response = fetch("https://ron-swanson-quotes.herokuapp.com/v2/quotes/search/" + word)
             .then(response => response.json())
             .then(data => { 
@@ -50,6 +57,7 @@
                 }
             }
             )
+            //catch error if needed
             .catch(error => console.error(error));
             
         })        
@@ -57,7 +65,21 @@
 
     <div id="quotes_container">
         <h1>Your Quotes:</h1>
-        <div id="quotes"></div>
+        <div id="quotes">Quotes will appear here!</div>
+    </div>
+
+    <div id="API-info">
+        <h2>API: Ron Swanson Quotes</h2> <br>
+        found <a href="https://mixedanalytics.com/blog/list-actually-free-open-no-auth-needed-apis/">here</a> or <a href="https://github.com/jamesseanwright/ron-swanson-quotes#ron-swanson-quotes-api">here</a><br>
+        This API can accept words in the query string as after '/search' in order 
+        to search the quote list for appearances of a word, or a number to get a 
+        set number of random quotes. If no extra parameters are added a random quote is provided
+        <br> <br>
+        <strong>How this API may be helpful/potential uses:</strong>
+        <ul>
+            <li>could send yourself a random quote daily</li>
+            <li>if making cards for a Parks and Rec fan club and sending out post cards, you could automatically randomize each persons quote</li>
+        </ul>
     </div>
 </body>
 </html>
