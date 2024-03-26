@@ -4,17 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ron Swanson</title>
+    <style>
+        #quotes {
+            font-size: 20px;
+        }
+
+        #submit {
+            height: 30px;
+            width: 100px;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 <body>
     <h1>Ron Quote Search Engine</h1>
-    <div id="wantedList"></div>
+    <label for="word_search">Please enter a word below and recieve related Ron Swanson Quotes!</label> 
+    <br>
+    <span>You can also hit submit with an empty box for a random quote!</span><br>
+    <input type="text" id="word_search" placeholder="Enter Word"> <br>
+    <button id="submit">Submit</button>
     
     <script>
-        let response = fetch("https://ron-swanson-quotes.herokuapp.com/v2/quotes")
+        let submit = document.getElementById('submit');
+        submit.addEventListener('click', function() {
+            document.getElementById('quotes').innerHTML = ''
+            let word = document.getElementById('word_search').value
+            let response = fetch("https://ron-swanson-quotes.herokuapp.com/v2/quotes/search/" + word)
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => { 
+                    for(i = 0; i < data.length; i++) {
+                        document.getElementById('quotes').innerHTML += data[i] + '</br>'
+                    }
+                }
+            )
             .catch(error => console.error(error));
-        
+            
+        })        
     </script>
+
+    <div id="quotes_container">
+        <h1>Your Quotes:</h1>
+        <div id="quotes"></div>
+    </div>
 </body>
 </html>
