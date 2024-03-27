@@ -10,7 +10,7 @@
             height: 700px;
             line-height: 2;
             font-family: 'consolas';
-            background-color: rgb(0, 0, 30);
+            background-color: rgb(152, 222, 249);
         }
     </style>
 </head>
