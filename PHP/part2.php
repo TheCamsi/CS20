@@ -11,6 +11,7 @@
             line-height: 2;
             font-family: 'consolas';
             background-color: rgb(152, 222, 249);
+            font-size: 20px;
         }
     </style>
 </head>
