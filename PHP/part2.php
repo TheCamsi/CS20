@@ -8,6 +8,9 @@
         .office-hours {
             width: 500px;
             height: 700px;
+            line-height: 2;
+            font-family: 'consolas';
+            background-color: rgb(0, 0, 30);
         }
     </style>
 </head>
@@ -25,7 +28,7 @@
                 "Saturday" => "12pm - 2pm"
             );
             foreach($officeHours as $day => $time) {
-                echo "Day: " . $day . " Hours: " . $time . "</br>";
+                echo $day . " - " . $time . "<br>";
             }
         ?>
     </div>
