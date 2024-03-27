@@ -7,10 +7,10 @@
 </head>
 <body>
     <?php 
-        $n = $_GET('n');
+        $n = $_GET['n'];
         //just wrote echo 15 times in a row
-        for($i = 0; $i < 15; $i++) {
-            echo $i . " x " . $n . " = " . $i * $n;
+        for($i = 1; $i <= 15; $i++) {
+            echo $i . " x " . $n . " = " . $i * $n . "</br>";
         }
     ?>
 </body>
