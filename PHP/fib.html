@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Fibonacci</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <input placeholder="Enter number" type="number" name="fib-box" id="num-box">
+    <button id="submit">Submit</button>
+    <div id="fib"></div>
+    <script>
+        document.getElementById('submit').addEventListener('click', function() {
+            let num = document.getElementById('num-box').value;
+            console.log(num);
+            let res = fetch('https://camerons.sgedu.site/PHP/fibapi.php?number=' + num)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+        })
+        
+    </script>
+</body>
+</html>
